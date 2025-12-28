@@ -1,49 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>ADS BY ( SURE SHOT )</title>
-    <style>
-        /* This ensures the container takes up the absolute full screen */
-        body, html {
-            margin: 0;
-            padding: 0;
-            height: 100vh;
-            width: 100vw;
-            overflow: hidden;
-            background-color: #000;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Loading...</title>
 
-        /* The actual webview container */
-        .webview-container {
-            position: absolute;
-            top: 0;
-            left: 0;
-            bottom: 0;
-            right: 0;
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
+<style>
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-family: Arial, sans-serif;
+}
+.loader {
+    text-align: center;
+}
+.spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid #555;
+    border-top: 4px solid #fff;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: auto;
+}
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+</style>
 
-        iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-    </style>
+<script>
+window.onload = function () {
+    window.location.replace("https://tashantsbhai.91club07.site");
+};
+</script>
 </head>
+
 <body>
-
-    <div class="webview-container">
-        <iframe 
-            src="https://api.allorigins.win/raw?url=https://tashantsbhai.91club07.site" 
-            sandbox="allow-forms allow-scripts allow-same-origin allow-popups allow-modals"
-            allow="fullscreen"
-            loading="lazy">
-        </iframe>
-    </div>
-
+<div class="loader">
+    <div class="spinner"></div>
+    <p>Loading, please wait...</p>
+</div>
 </body>
 </html>
