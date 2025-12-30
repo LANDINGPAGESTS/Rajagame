@@ -140,3 +140,35 @@
     </script>
 </body>
 </html>
+            ctx.fillRect(0, 0, W, H);
+
+            for (const p of particles) {
+                p.x += p.vx;
+                p.y += p.vy;
+                if (p.x < 0) p.x = W;
+                if (p.x > W) p.x = 0;
+                if (p.y < 0) p.y = H;
+                if (p.y > H) p.y = 0;
+                ctx.beginPath();
+                ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+                ctx.fillStyle = 'rgba(0,255,255,0.5)';
+                ctx.fill();
+            }
+
+            ctx.beginPath();
+            for (let x = 0; x < W; x += 15) {
+                const y = H / 2 + Math.sin(x * 0.01 + t * 0.05) * 15 + Math.sin(x * 0.02 + t * 0.03) * 10;
+                if (x === 0) ctx.moveTo(x, y);
+                else ctx.lineTo(x, y);
+            }
+            ctx.strokeStyle = 'rgba(0,255,200,0.3)';
+            ctx.lineWidth = 2;
+            ctx.stroke();
+
+            t += 0.5;
+            requestAnimationFrame(draw);
+        }
+        draw();
+    </script>
+</body>
+</html>
